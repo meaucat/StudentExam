@@ -5,23 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище UchebnayaPracticeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Academics">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="FIO" Type="nvarchar" MaxLength="255" />
-          <Property Name="Birthday" Type="date" />
-          <Property Name="Specialization" Type="nvarchar" MaxLength="100" />
-          <Property Name="YearAward" Type="int" />
-        </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "UchebnayaPractice.dbo.Animals_Kulikov" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="Animals_Kulikov">
-          <Property Name="ID" Type="int" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="Squad" Type="nvarchar" MaxLength="100" />
-        </EntityType>-->
         <EntityType Name="Cafedra">
           <Key>
             <PropertyRef Name="CipherID" />
@@ -29,29 +12,6 @@
           <Property Name="CipherID" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="255" />
           <Property Name="AbbrID" Type="nvarchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="Countries">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Capital" Type="nvarchar" MaxLength="255" />
-          <Property Name="Square" Type="int" />
-          <Property Name="Population" Type="int" />
-          <Property Name="Continent" Type="nvarchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="Countries_Kulikov">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Capital" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Continent" Type="nvarchar" MaxLength="100" />
-          <Property Name="Population" Type="int" />
-          <Property Name="Square" Type="int" />
-          <Property Name="TypeOfRuling" Type="int" />
         </EntityType>
         <EntityType Name="Discipline">
           <Key>
@@ -99,13 +59,6 @@
           <Property Name="AbbrID" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "UchebnayaPractice.dbo.Flowers_Kulikov" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="Flowers_Kulikov">
-          <Property Name="ID" Type="int" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="Class" Type="nvarchar" MaxLength="100" />
-        </EntityType>-->
         <EntityType Name="Speciality">
           <Key>
             <PropertyRef Name="SpecialityID" />
@@ -121,16 +74,6 @@
           <Property Name="RegID" Type="int" Nullable="false" />
           <Property Name="SpecialityID" Type="nvarchar" MaxLength="255" />
           <Property Name="Surname" Type="nvarchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="Student1">
-          <Key>
-            <PropertyRef Name="IDStudent" />
-          </Key>
-          <Property Name="IDStudent" Type="int" Nullable="false" />
-          <Property Name="Surname" Type="nvarchar" MaxLength="255" />
-          <Property Name="Subject" Type="nvarchar" MaxLength="255" />
-          <Property Name="School" Type="nvarchar" MaxLength="255" />
-          <Property Name="Ball" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -150,13 +93,6 @@
           <Property Name="PositionAward" Type="nvarchar" MaxLength="255" />
           <Property Name="Stepen" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="Upravlenie_Kulikov">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Vid" Type="nvarchar" MaxLength="100" />
-        </EntityType>
         <EntityType Name="ZavCafedra">
           <Key>
             <PropertyRef Name="ZavID" />
@@ -170,31 +106,6 @@
           <Property Name="ZayavkaID" Type="int" />
           <Property Name="SpecialityID" Type="nvarchar" MaxLength="255" />
         </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "UchebnayaPractice.dbo.Гимназисты" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
-        <EntityType Name="Гимназисты">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Фамилия" />
-            <PropertyRef Name="Предмет" />
-            <PropertyRef Name="Школа" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Фамилия" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Предмет" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Школа" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Баллы" Type="float" />
-        </EntityType>
-        <EntityType Name="Ученики">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Фамилия" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Предмет" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Школа" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Баллы" Type="float" />
-        </EntityType>
         <Association Name="FK__Cafedra__AbbrID__59063A47">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="*" />
@@ -204,18 +115,6 @@
             </Principal>
             <Dependent Role="Cafedra">
               <PropertyRef Name="AbbrID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Countries__TypeO__59FA5E80">
-          <End Role="Upravlenie_Kulikov" Type="Self.Upravlenie_Kulikov" Multiplicity="0..1" />
-          <End Role="Countries_Kulikov" Type="Self.Countries_Kulikov" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Upravlenie_Kulikov">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Countries_Kulikov">
-              <PropertyRef Name="TypeOfRuling" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -319,38 +218,19 @@
 ошибка 6004: Невозможно найти таблицу "UchebnayaPractice.dbo.Zayavka", на которую ссылается связь.
         <Association Name="FK__Zayavka__Zayavka__656C112C" />-->
         <EntityContainer Name="Хранилище UchebnayaPracticeModelContainer">
-          <EntitySet Name="Academics" EntityType="Self.Academics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cafedra" EntityType="Self.Cafedra" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Countries_Kulikov" EntityType="Self.Countries_Kulikov" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Discipline" EntityType="Self.Discipline" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Engineer" EntityType="Self.Engineer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Faculty" EntityType="Self.Faculty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Speciality" EntityType="Self.Speciality" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Student1" EntityType="Self.Student1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Upravlenie_Kulikov" EntityType="Self.Upravlenie_Kulikov" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZavCafedra" EntityType="Self.ZavCafedra" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ученики" EntityType="Self.Ученики" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Гимназисты" EntityType="Self.Гимназисты" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Гимназисты].[ID] AS [ID], 
-    [Гимназисты].[Фамилия] AS [Фамилия], 
-    [Гимназисты].[Предмет] AS [Предмет], 
-    [Гимназисты].[Школа] AS [Школа], 
-    [Гимназисты].[Баллы] AS [Баллы]
-    FROM [dbo].[Гимназисты] AS [Гимназисты]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__Cafedra__AbbrID__59063A47" Association="Self.FK__Cafedra__AbbrID__59063A47">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Cafedra" EntitySet="Cafedra" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Countries__TypeO__59FA5E80" Association="Self.FK__Countries__TypeO__59FA5E80">
-            <End Role="Upravlenie_Kulikov" EntitySet="Upravlenie_Kulikov" />
-            <End Role="Countries_Kulikov" EntitySet="Countries_Kulikov" />
           </AssociationSet>
           <AssociationSet Name="FK__Disciplin__Ciphe__5AEE82B9" Association="Self.FK__Disciplin__Ciphe__5AEE82B9">
             <End Role="Cafedra" EntitySet="Cafedra" />
@@ -386,16 +266,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UchebnayaPracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Academics">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="FIO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Birthday" Type="DateTime" Precision="0" />
-          <Property Name="Specialization" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="YearAward" Type="Int32" />
-        </EntityType>
         <EntityType Name="Cafedra">
           <Key>
             <PropertyRef Name="CipherID" />
@@ -407,30 +277,6 @@
           <NavigationProperty Name="Discipline" Relationship="Self.FK__Disciplin__Ciphe__5AEE82B9" FromRole="Cafedra" ToRole="Discipline" />
           <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__Cipher__5BE2A6F2" FromRole="Cafedra" ToRole="Employee" />
           <NavigationProperty Name="Speciality" Relationship="Self.FK__Specialit__Ciphe__60A75C0F" FromRole="Cafedra" ToRole="Speciality" />
-        </EntityType>
-        <EntityType Name="Countries">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Capital" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Square" Type="Int32" />
-          <Property Name="Population" Type="Int32" />
-          <Property Name="Continent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Countries_Kulikov">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Capital" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Continent" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Population" Type="Int32" />
-          <Property Name="Square" Type="Int32" />
-          <Property Name="TypeOfRuling" Type="Int32" />
-          <NavigationProperty Name="Upravlenie_Kulikov" Relationship="Self.FK__Countries__TypeO__59FA5E80" FromRole="Countries_Kulikov" ToRole="Upravlenie_Kulikov" />
         </EntityType>
         <EntityType Name="Discipline">
           <Key>
@@ -494,16 +340,6 @@
           <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Speciality" Relationship="Self.FK__Student__Special__619B8048" FromRole="Student" ToRole="Speciality" />
         </EntityType>
-        <EntityType Name="Student1">
-          <Key>
-            <PropertyRef Name="IDStudent" />
-          </Key>
-          <Property Name="IDStudent" Type="Int32" Nullable="false" />
-          <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="School" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Ball" Type="Decimal" Precision="10" Scale="2" />
-        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -523,14 +359,6 @@
           <Property Name="Stepen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee" Relationship="Self.FK__Teacher__Teacher__628FA481" FromRole="Teacher" ToRole="Employee" />
         </EntityType>
-        <EntityType Name="Upravlenie_Kulikov">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Vid" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Countries_Kulikov" Relationship="Self.FK__Countries__TypeO__59FA5E80" FromRole="Upravlenie_Kulikov" ToRole="Countries_Kulikov" />
-        </EntityType>
         <EntityType Name="ZavCafedra">
           <Key>
             <PropertyRef Name="ZavID" />
@@ -538,29 +366,6 @@
           <Property Name="ZavID" Type="Int32" Nullable="false" />
           <Property Name="WorkingYears" Type="Int32" />
           <NavigationProperty Name="Employee" Relationship="Self.FK__ZavCafedr__ZavID__6383C8BA" FromRole="ZavCafedra" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Ученики">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Предмет" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Школа" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Баллы" Type="Double" />
-        </EntityType>
-        <EntityType Name="Гимназисты">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Фамилия" />
-            <PropertyRef Name="Предмет" />
-            <PropertyRef Name="Школа" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Предмет" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Школа" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Баллы" Type="Double" />
         </EntityType>
         <Association Name="FK__Cafedra__AbbrID__59063A47">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
@@ -607,18 +412,6 @@
             </Principal>
             <Dependent Role="Speciality">
               <PropertyRef Name="CipherID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Countries__TypeO__59FA5E80">
-          <End Role="Upravlenie_Kulikov" Type="Self.Upravlenie_Kulikov" Multiplicity="0..1" />
-          <End Role="Countries_Kulikov" Type="Self.Countries_Kulikov" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Upravlenie_Kulikov">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Countries_Kulikov">
-              <PropertyRef Name="TypeOfRuling" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -671,23 +464,16 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="UchebnayaPracticeEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Academics" EntityType="Self.Academics" />
           <EntitySet Name="Cafedra" EntityType="Self.Cafedra" />
-          <EntitySet Name="Countries" EntityType="Self.Countries" />
-          <EntitySet Name="Countries_Kulikov" EntityType="Self.Countries_Kulikov" />
           <EntitySet Name="Discipline" EntityType="Self.Discipline" />
           <EntitySet Name="Employee" EntityType="Self.Employee" />
           <EntitySet Name="Engineer" EntityType="Self.Engineer" />
           <EntitySet Name="Faculty" EntityType="Self.Faculty" />
           <EntitySet Name="Speciality" EntityType="Self.Speciality" />
           <EntitySet Name="Student" EntityType="Self.Student" />
-          <EntitySet Name="Student1" EntityType="Self.Student1" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" />
-          <EntitySet Name="Upravlenie_Kulikov" EntityType="Self.Upravlenie_Kulikov" />
           <EntitySet Name="ZavCafedra" EntityType="Self.ZavCafedra" />
-          <EntitySet Name="Ученики" EntityType="Self.Ученики" />
-          <EntitySet Name="Гимназисты" EntityType="Self.Гимназисты" />
           <AssociationSet Name="FK__Cafedra__AbbrID__59063A47" Association="Self.FK__Cafedra__AbbrID__59063A47">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Cafedra" EntitySet="Cafedra" />
@@ -703,10 +489,6 @@
           <AssociationSet Name="FK__Specialit__Ciphe__60A75C0F" Association="Self.FK__Specialit__Ciphe__60A75C0F">
             <End Role="Cafedra" EntitySet="Cafedra" />
             <End Role="Speciality" EntitySet="Speciality" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Countries__TypeO__59FA5E80" Association="Self.FK__Countries__TypeO__59FA5E80">
-            <End Role="Upravlenie_Kulikov" EntitySet="Upravlenie_Kulikov" />
-            <End Role="Countries_Kulikov" EntitySet="Countries_Kulikov" />
           </AssociationSet>
           <AssociationSet Name="FK__Engineer__EngID__5CD6CB2B" Association="Self.FK__Engineer__EngID__5CD6CB2B">
             <End Role="Employee" EntitySet="Employee" />
@@ -731,48 +513,12 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище UchebnayaPracticeModelContainer" CdmEntityContainer="UchebnayaPracticeEntities">
-          <EntitySetMapping Name="Academics">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Academics">
-              <MappingFragment StoreEntitySet="Academics">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FIO" ColumnName="FIO" />
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
-                <ScalarProperty Name="YearAward" ColumnName="YearAward" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Cafedra">
             <EntityTypeMapping TypeName="UchebnayaPracticeModel.Cafedra">
               <MappingFragment StoreEntitySet="Cafedra">
                 <ScalarProperty Name="CipherID" ColumnName="CipherID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="AbbrID" ColumnName="AbbrID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Countries">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Countries">
-              <MappingFragment StoreEntitySet="Countries">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Capital" ColumnName="Capital" />
-                <ScalarProperty Name="Square" ColumnName="Square" />
-                <ScalarProperty Name="Population" ColumnName="Population" />
-                <ScalarProperty Name="Continent" ColumnName="Continent" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Countries_Kulikov">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Countries_Kulikov">
-              <MappingFragment StoreEntitySet="Countries_Kulikov">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Capital" ColumnName="Capital" />
-                <ScalarProperty Name="Continent" ColumnName="Continent" />
-                <ScalarProperty Name="Population" ColumnName="Population" />
-                <ScalarProperty Name="Square" ColumnName="Square" />
-                <ScalarProperty Name="TypeOfRuling" ColumnName="TypeOfRuling" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -834,17 +580,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Student1">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Student1">
-              <MappingFragment StoreEntitySet="Student1">
-                <ScalarProperty Name="IDStudent" ColumnName="IDStudent" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Subject" ColumnName="Subject" />
-                <ScalarProperty Name="School" ColumnName="School" />
-                <ScalarProperty Name="Ball" ColumnName="Ball" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="UchebnayaPracticeModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -865,41 +600,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Upravlenie_Kulikov">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Upravlenie_Kulikov">
-              <MappingFragment StoreEntitySet="Upravlenie_Kulikov">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Vid" ColumnName="Vid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ZavCafedra">
             <EntityTypeMapping TypeName="UchebnayaPracticeModel.ZavCafedra">
               <MappingFragment StoreEntitySet="ZavCafedra">
                 <ScalarProperty Name="ZavID" ColumnName="ZavID" />
                 <ScalarProperty Name="WorkingYears" ColumnName="WorkingYears" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Ученики">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Ученики">
-              <MappingFragment StoreEntitySet="Ученики">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
-                <ScalarProperty Name="Предмет" ColumnName="Предмет" />
-                <ScalarProperty Name="Школа" ColumnName="Школа" />
-                <ScalarProperty Name="Баллы" ColumnName="Баллы" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Гимназисты">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Гимназисты">
-              <MappingFragment StoreEntitySet="Гимназисты">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
-                <ScalarProperty Name="Предмет" ColumnName="Предмет" />
-                <ScalarProperty Name="Школа" ColumnName="Школа" />
-                <ScalarProperty Name="Баллы" ColumnName="Баллы" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

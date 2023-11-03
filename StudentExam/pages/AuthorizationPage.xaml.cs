@@ -40,7 +40,14 @@ namespace StudentExam.pages
             employees = new List<Employee>(Connection.UchebnayaPracticeEntities.Employee.ToList());
             Employee currentUser = employees.FirstOrDefault(x => x.Login == login && x.Password == password);
             if (currentUser != null)
-                NavigationService.Navigate(new GuestPage());
+            {
+                if (currentUser.Position == "зав. кафедрой")
+                    NavigationService.Navigate(new ZavKafPage());
+                if (currentUser.Position == "преподаватель")
+                    NavigationService.Navigate(new TeacherPage());
+                if (currentUser.Position == "инженер")
+                    NavigationService.Navigate(new EngineerPage());
+            }
             else
                 LoginBtn.Background = Brushes.Red;
                 CheckLoginTextBlock.Foreground = Brushes.Red;
