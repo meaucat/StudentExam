@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f0ad0f40003e42409e8efc00f6e8ac94" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Academics" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Cafedra" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Countries" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Countries_Kulikov" Width="1.5" PointX="12" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Discipline" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Employee" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Engineer" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Faculty" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Speciality" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Student" Width="1.5" PointX="7.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Student1" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Teacher" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Upravlenie_Kulikov" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.ZavCafedra" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Ученики" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebnayaPracticeModel.Гимназисты" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__Cafedra__AbbrID__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__Disciplin__Ciphe__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__Employee__Cipher__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__Specialit__Ciphe__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__Countries__TypeO__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__Engineer__EngID__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__Teacher__Teacher__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__ZavCafedr__ZavID__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebnayaPracticeModel.FK__Student__Special__619B8048" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
