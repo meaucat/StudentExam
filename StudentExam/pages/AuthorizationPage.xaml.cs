@@ -44,7 +44,7 @@ namespace StudentExam.pages
                 if (currentUser.Position == "зав. кафедрой")
                     NavigationService.Navigate(new ZavKafPage());
                 if (currentUser.Position == "преподаватель")
-                    NavigationService.Navigate(new TeacherPage());
+                    NavigationService.Navigate(new TeacherPage(currentUser));
                 if (currentUser.Position == "инженер")
                     NavigationService.Navigate(new EngineerPage());
                 

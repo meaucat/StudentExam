@@ -23,11 +23,12 @@ namespace StudentExam.pages
     {
         public static List<Exam> exams { get; set; }
         
-        public TeacherPage()
+        public TeacherPage(Employee currentUser)
         {
             InitializeComponent();
             exams = new List<Exam>(Connection.UchebnayaPracticeEntities.Exam.ToList());
             DataContext = this;
+            TeacherNameTB.Text = currentUser;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
