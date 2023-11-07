@@ -31,13 +31,13 @@
         </Grid.RowDefinitions>
 
         <TextBlock FontSize="40" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2">Welcome</TextBlock>
-        <TextBlock FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1">Login: </TextBlock>
-        <TextBlock FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1">Password: </TextBlock>
+        <TextBlock FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1">Login:</TextBlock>
+        <TextBlock FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1">Password:</TextBlock>
         <TextBox x:Name="LoginTextBox" Height="30" Width="280" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" ></TextBox>
         <PasswordBox x:Name="PasswordBox" Height="30" Width="280" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3"></PasswordBox>
 
         <TextBlock x:Name="CheckLoginTextBlock" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="4"></TextBlock>
-        
+
         <Button Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Height="34" Width="180" Click="Button_Click">Guest</Button>
         <Button x:Name="LoginBtn" Background="#6666ff" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" Height="34" Width="180" Click="LoginBtn_Click">Login</Button>
     </Grid>

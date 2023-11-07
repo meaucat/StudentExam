@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StudentExam.DB;
 
 namespace StudentExam.pages
 {
@@ -20,7 +21,7 @@ namespace StudentExam.pages
     /// </summary>
     public partial class EngineerPage : Page
     {
-        public EngineerPage()
+        public EngineerPage(Employee currentUser)
         {
             InitializeComponent();
         }

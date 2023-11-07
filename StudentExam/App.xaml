@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:StudentExam"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="{x:Type Button}">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius"
+                            Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
     </Application.Resources>
 </Application>

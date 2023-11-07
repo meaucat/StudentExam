@@ -1,4 +1,4 @@
-﻿<Page x:Class="StudentExam.pages.TeacherPage"
+﻿<Page x:Class="StudentExam.pages.AddStudent"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StudentExam.pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TeacherPage">
+      Title="AddStudent">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -37,12 +37,12 @@
 
         <Button Background="#ff6161" FontWeight="Bold" Click="Button_Click">← Back</Button>
 
-        <TextBlock x:Name="TeacherNameTB" FontSize="20" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="4">Преподаватель:</TextBlock>
+        <TextBlock x:Name="TeacherNameTB" FontSize="20" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="4"/>
 
         <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Экзамены</TextBlock>
 
         <ListView x:Name="DisciplineListView" ItemsSource="{Binding exams}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4" SelectionChanged="DisciplineListView_SelectionChanged">
+                  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=ExamDate}"
@@ -52,5 +52,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <TextBlock x:Name="ExamNameTB" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"></TextBlock>
+        <TextBlock x:Name="ExamDateTB" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13"></TextBlock>
     </Grid>
 </Page>

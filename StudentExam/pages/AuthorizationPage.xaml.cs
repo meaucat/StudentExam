@@ -29,7 +29,7 @@ namespace StudentExam.pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Pages/GuestPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new GuestPage());
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
@@ -42,11 +42,11 @@ namespace StudentExam.pages
             if (currentUser != null)
             {
                 if (currentUser.Position == "зав. кафедрой")
-                    NavigationService.Navigate(new ZavKafPage());
+                    NavigationService.Navigate(new ZavKafPage(currentUser));
                 if (currentUser.Position == "преподаватель")
                     NavigationService.Navigate(new TeacherPage(currentUser));
                 if (currentUser.Position == "инженер")
-                    NavigationService.Navigate(new EngineerPage());
+                    NavigationService.Navigate(new EngineerPage(currentUser));
                 
             }
             else

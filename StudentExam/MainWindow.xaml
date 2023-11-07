@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:StudentExam"
         mc:Ignorable="d"
         Title="Exam" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid>
-        <Frame Source="Pages/AuthorizationPage.xaml"/>
+        <Frame Source="Pages/AuthorizationPage.xaml"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
