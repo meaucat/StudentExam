@@ -12,20 +12,12 @@ namespace StudentExam.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Student
+    public partial class Zayavka
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Student()
-        {
-            this.Exam = new HashSet<Exam>();
-        }
-    
-        public int RegID { get; set; }
+        public int ZayavkaID { get; set; }
         public string SpecialityID { get; set; }
-        public string Surname { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Exam> Exam { get; set; }
+        public virtual Discipline Discipline { get; set; }
         public virtual Speciality Speciality { get; set; }
     }
 }

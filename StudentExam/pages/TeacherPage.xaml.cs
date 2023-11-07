@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using StudentExam.DB;
 
 namespace StudentExam.pages
 {
@@ -20,9 +21,20 @@ namespace StudentExam.pages
     /// </summary>
     public partial class TeacherPage : Page
     {
+        public static List<Exam> exams { get; set; }
+        
         public TeacherPage()
         {
             InitializeComponent();
+            exams = new List<Exam>(Connection.UchebnayaPracticeEntities.Exam.ToList());
+            DataContext = this;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("Pages/AuthorizationPage.xaml", UriKind.Relative));
+        }
+
+
     }
 }

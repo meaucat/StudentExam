@@ -35,7 +35,7 @@ namespace StudentExam.pages
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
             string login = LoginTextBox.Text.Trim();
-            string password = LoginTextBox.Text.Trim();
+            string password = PasswordBox.Password.Trim();
 
             employees = new List<Employee>(Connection.UchebnayaPracticeEntities.Employee.ToList());
             Employee currentUser = employees.FirstOrDefault(x => x.Login == login && x.Password == password);
@@ -47,6 +47,7 @@ namespace StudentExam.pages
                     NavigationService.Navigate(new TeacherPage());
                 if (currentUser.Position == "инженер")
                     NavigationService.Navigate(new EngineerPage());
+                
             }
             else
                 LoginBtn.Background = Brushes.Red;

@@ -14,6 +14,12 @@ namespace StudentExam.DB
     
     public partial class Employee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Employee()
+        {
+            this.Exam = new HashSet<Exam>();
+        }
+    
         public int EmployeeID { get; set; }
         public string CipherID { get; set; }
         public string Surname { get; set; }
@@ -25,6 +31,8 @@ namespace StudentExam.DB
     
         public virtual Cafedra Cafedra { get; set; }
         public virtual Engineer Engineer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Exam> Exam { get; set; }
         public virtual Teacher Teacher { get; set; }
         public virtual ZavCafedra ZavCafedra { get; set; }
     }
