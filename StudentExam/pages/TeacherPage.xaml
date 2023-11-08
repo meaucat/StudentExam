@@ -48,7 +48,9 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=ExamDate}"
                         Header="Дата экзамена" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Discipline.Name}"
-                        Header="Название дисциплины" Width="290"/>
+                        Header="Название дисциплины" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Mark}"
+                        Header="Оценка" Width="60"/>
                 </GridView>
             </ListView.View>
         </ListView>

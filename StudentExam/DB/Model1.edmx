@@ -4,17 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище UchebnayaPracticeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Academics">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="FIO" Type="nvarchar" MaxLength="255" />
-          <Property Name="Birthday" Type="date" />
-          <Property Name="Specialization" Type="nvarchar" MaxLength="100" />
-          <Property Name="YearAward" Type="int" />
-        </EntityType>
+      <Schema Namespace="Хранилище UchebnayaPracticeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cafedra">
           <Key>
             <PropertyRef Name="CipherID" />
@@ -22,29 +12,6 @@
           <Property Name="CipherID" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="255" />
           <Property Name="AbbrID" Type="nvarchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="Countries">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="255" />
-          <Property Name="Capital" Type="nvarchar" MaxLength="255" />
-          <Property Name="Square" Type="int" />
-          <Property Name="Population" Type="int" />
-          <Property Name="Continent" Type="nvarchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="Countries_Kulikov">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Capital" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Continent" Type="nvarchar" MaxLength="100" />
-          <Property Name="Population" Type="int" />
-          <Property Name="Square" Type="int" />
-          <Property Name="TypeOfRuling" Type="int" />
         </EntityType>
         <EntityType Name="Discipline">
           <Key>
@@ -110,16 +77,6 @@
           <Property Name="SpecialityID" Type="nvarchar" MaxLength="255" />
           <Property Name="Surname" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="Student1">
-          <Key>
-            <PropertyRef Name="IDStudent" />
-          </Key>
-          <Property Name="IDStudent" Type="int" Nullable="false" />
-          <Property Name="Surname" Type="nvarchar" MaxLength="255" />
-          <Property Name="Subject" Type="nvarchar" MaxLength="255" />
-          <Property Name="School" Type="nvarchar" MaxLength="255" />
-          <Property Name="Ball" Type="decimal" Precision="10" Scale="2" />
-        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -138,13 +95,6 @@
           <Property Name="PositionAward" Type="nvarchar" MaxLength="255" />
           <Property Name="Stepen" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="Upravlenie_Kulikov">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Vid" Type="nvarchar" MaxLength="100" />
-        </EntityType>
         <EntityType Name="ZavCafedra">
           <Key>
             <PropertyRef Name="ZavID" />
@@ -161,32 +111,7 @@
           <Property Name="ZayavkaID" Type="int" Nullable="false" />
           <Property Name="SpecialityID" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "UchebnayaPractice.dbo.Гимназисты" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
-        <EntityType Name="Гимназисты">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Фамилия" />
-            <PropertyRef Name="Предмет" />
-            <PropertyRef Name="Школа" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Фамилия" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Предмет" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Школа" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Баллы" Type="float" />
-        </EntityType>
-        <EntityType Name="Ученики">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Фамилия" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Предмет" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Школа" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Баллы" Type="float" />
-        </EntityType>
-        <Association Name="FK__Cafedra__AbbrID__48CFD27E">
+        <Association Name="FK__Cafedra__AbbrID__59063A47">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="*" />
           <ReferentialConstraint>
@@ -198,19 +123,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Countries__TypeO__49C3F6B7">
-          <End Role="Upravlenie_Kulikov" Type="Self.Upravlenie_Kulikov" Multiplicity="0..1" />
-          <End Role="Countries_Kulikov" Type="Self.Countries_Kulikov" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Upravlenie_Kulikov">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Countries_Kulikov">
-              <PropertyRef Name="TypeOfRuling" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Disciplin__Ciphe__4AB81AF0">
+        <Association Name="FK__Disciplin__Ciphe__5AEE82B9">
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="0..1" />
           <End Role="Discipline" Type="Self.Discipline" Multiplicity="*" />
           <ReferentialConstraint>
@@ -222,7 +135,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employee__Cipher__4BAC3F29">
+        <Association Name="FK__Employee__Cipher__5BE2A6F2">
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -234,7 +147,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Engineer__EngID__4CA06362">
+        <Association Name="FK__Engineer__EngID__5CD6CB2B">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Engineer" Type="Self.Engineer" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -246,7 +159,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Exam__Discipline__4D94879B">
+        <Association Name="FK__Exam__Discipline__5DCAEF64">
           <End Role="Discipline" Type="Self.Discipline" Multiplicity="0..1" />
           <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -258,7 +171,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Exam__EmployeeID__4E88ABD4">
+        <Association Name="FK__Exam__EmployeeID__5EBF139D">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -270,7 +183,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Exam__RegID__4F7CD00D">
+        <Association Name="FK__Exam__RegID__5FB337D6">
           <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
           <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -282,7 +195,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Specialit__Ciphe__5070F446">
+        <Association Name="FK__Specialit__Ciphe__60A75C0F">
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="0..1" />
           <End Role="Speciality" Type="Self.Speciality" Multiplicity="*" />
           <ReferentialConstraint>
@@ -294,7 +207,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Student__Special__5165187F">
+        <Association Name="FK__Student__Special__619B8048">
           <End Role="Speciality" Type="Self.Speciality" Multiplicity="0..1" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
           <ReferentialConstraint>
@@ -306,7 +219,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Teacher__Teacher__52593CB8">
+        <Association Name="FK__Teacher__Teacher__628FA481">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -318,7 +231,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZavCafedr__ZavID__534D60F1">
+        <Association Name="FK__ZavCafedr__ZavID__6383C8BA">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="ZavCafedra" Type="Self.ZavCafedra" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -330,7 +243,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Zayavka__Special__5441852A">
+        <Association Name="FK__Zayavka__Special__6477ECF3">
           <End Role="Speciality" Type="Self.Speciality" Multiplicity="0..1" />
           <End Role="Zayavka" Type="Self.Zayavka" Multiplicity="*" />
           <ReferentialConstraint>
@@ -342,7 +255,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Zayavka__Zayavka__5535A963">
+        <Association Name="FK__Zayavka__Zayavka__656C112C">
           <End Role="Discipline" Type="Self.Discipline" Multiplicity="1" />
           <End Role="Zayavka" Type="Self.Zayavka" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -355,10 +268,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище UchebnayaPracticeModelContainer">
-          <EntitySet Name="Academics" EntityType="Self.Academics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cafedra" EntityType="Self.Cafedra" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Countries_Kulikov" EntityType="Self.Countries_Kulikov" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Discipline" EntityType="Self.Discipline" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Engineer" EntityType="Self.Engineer" Schema="dbo" store:Type="Tables" />
@@ -366,98 +276,73 @@
           <EntitySet Name="Faculty" EntityType="Self.Faculty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Speciality" EntityType="Self.Speciality" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Student1" EntityType="Self.Student1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Upravlenie_Kulikov" EntityType="Self.Upravlenie_Kulikov" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZavCafedra" EntityType="Self.ZavCafedra" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Ученики" EntityType="Self.Ученики" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zayavka" EntityType="Self.Zayavka" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Zayavka].[ZayavkaID] AS [ZayavkaID], 
     [Zayavka].[SpecialityID] AS [SpecialityID]
     FROM [dbo].[Zayavka] AS [Zayavka]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="Гимназисты" EntityType="Self.Гимназисты" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Гимназисты].[ID] AS [ID], 
-    [Гимназисты].[Фамилия] AS [Фамилия], 
-    [Гимназисты].[Предмет] AS [Предмет], 
-    [Гимназисты].[Школа] AS [Школа], 
-    [Гимназисты].[Баллы] AS [Баллы]
-    FROM [dbo].[Гимназисты] AS [Гимназисты]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK__Cafedra__AbbrID__48CFD27E" Association="Self.FK__Cafedra__AbbrID__48CFD27E">
+          <AssociationSet Name="FK__Cafedra__AbbrID__59063A47" Association="Self.FK__Cafedra__AbbrID__59063A47">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Cafedra" EntitySet="Cafedra" />
           </AssociationSet>
-          <AssociationSet Name="FK__Countries__TypeO__49C3F6B7" Association="Self.FK__Countries__TypeO__49C3F6B7">
-            <End Role="Upravlenie_Kulikov" EntitySet="Upravlenie_Kulikov" />
-            <End Role="Countries_Kulikov" EntitySet="Countries_Kulikov" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Disciplin__Ciphe__4AB81AF0" Association="Self.FK__Disciplin__Ciphe__4AB81AF0">
+          <AssociationSet Name="FK__Disciplin__Ciphe__5AEE82B9" Association="Self.FK__Disciplin__Ciphe__5AEE82B9">
             <End Role="Cafedra" EntitySet="Cafedra" />
             <End Role="Discipline" EntitySet="Discipline" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employee__Cipher__4BAC3F29" Association="Self.FK__Employee__Cipher__4BAC3F29">
+          <AssociationSet Name="FK__Employee__Cipher__5BE2A6F2" Association="Self.FK__Employee__Cipher__5BE2A6F2">
             <End Role="Cafedra" EntitySet="Cafedra" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
-          <AssociationSet Name="FK__Engineer__EngID__4CA06362" Association="Self.FK__Engineer__EngID__4CA06362">
+          <AssociationSet Name="FK__Engineer__EngID__5CD6CB2B" Association="Self.FK__Engineer__EngID__5CD6CB2B">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Engineer" EntitySet="Engineer" />
           </AssociationSet>
-          <AssociationSet Name="FK__Exam__Discipline__4D94879B" Association="Self.FK__Exam__Discipline__4D94879B">
+          <AssociationSet Name="FK__Exam__Discipline__5DCAEF64" Association="Self.FK__Exam__Discipline__5DCAEF64">
             <End Role="Discipline" EntitySet="Discipline" />
             <End Role="Exam" EntitySet="Exam" />
           </AssociationSet>
-          <AssociationSet Name="FK__Exam__EmployeeID__4E88ABD4" Association="Self.FK__Exam__EmployeeID__4E88ABD4">
+          <AssociationSet Name="FK__Exam__EmployeeID__5EBF139D" Association="Self.FK__Exam__EmployeeID__5EBF139D">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Exam" EntitySet="Exam" />
           </AssociationSet>
-          <AssociationSet Name="FK__Exam__RegID__4F7CD00D" Association="Self.FK__Exam__RegID__4F7CD00D">
+          <AssociationSet Name="FK__Exam__RegID__5FB337D6" Association="Self.FK__Exam__RegID__5FB337D6">
             <End Role="Student" EntitySet="Student" />
             <End Role="Exam" EntitySet="Exam" />
           </AssociationSet>
-          <AssociationSet Name="FK__Specialit__Ciphe__5070F446" Association="Self.FK__Specialit__Ciphe__5070F446">
+          <AssociationSet Name="FK__Specialit__Ciphe__60A75C0F" Association="Self.FK__Specialit__Ciphe__60A75C0F">
             <End Role="Cafedra" EntitySet="Cafedra" />
             <End Role="Speciality" EntitySet="Speciality" />
           </AssociationSet>
-          <AssociationSet Name="FK__Student__Special__5165187F" Association="Self.FK__Student__Special__5165187F">
+          <AssociationSet Name="FK__Student__Special__619B8048" Association="Self.FK__Student__Special__619B8048">
             <End Role="Speciality" EntitySet="Speciality" />
             <End Role="Student" EntitySet="Student" />
           </AssociationSet>
-          <AssociationSet Name="FK__Teacher__Teacher__52593CB8" Association="Self.FK__Teacher__Teacher__52593CB8">
+          <AssociationSet Name="FK__Teacher__Teacher__628FA481" Association="Self.FK__Teacher__Teacher__628FA481">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Teacher" EntitySet="Teacher" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZavCafedr__ZavID__534D60F1" Association="Self.FK__ZavCafedr__ZavID__534D60F1">
+          <AssociationSet Name="FK__ZavCafedr__ZavID__6383C8BA" Association="Self.FK__ZavCafedr__ZavID__6383C8BA">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="ZavCafedra" EntitySet="ZavCafedra" />
           </AssociationSet>
-          <AssociationSet Name="FK__Zayavka__Special__5441852A" Association="Self.FK__Zayavka__Special__5441852A">
+          <AssociationSet Name="FK__Zayavka__Special__6477ECF3" Association="Self.FK__Zayavka__Special__6477ECF3">
             <End Role="Speciality" EntitySet="Speciality" />
             <End Role="Zayavka" EntitySet="Zayavka" />
           </AssociationSet>
-          <AssociationSet Name="FK__Zayavka__Zayavka__5535A963" Association="Self.FK__Zayavka__Zayavka__5535A963">
+          <AssociationSet Name="FK__Zayavka__Zayavka__656C112C" Association="Self.FK__Zayavka__Zayavka__656C112C">
             <End Role="Discipline" EntitySet="Discipline" />
             <End Role="Zayavka" EntitySet="Zayavka" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UchebnayaPracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Academics">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="FIO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Birthday" Type="DateTime" Precision="0" />
-          <Property Name="Specialization" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="YearAward" Type="Int32" />
-        </EntityType>
         <EntityType Name="Cafedra">
           <Key>
             <PropertyRef Name="CipherID" />
@@ -465,34 +350,10 @@
           <Property Name="CipherID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="AbbrID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Faculty" Relationship="Self.FK__Cafedra__AbbrID__48CFD27E" FromRole="Cafedra" ToRole="Faculty" />
-          <NavigationProperty Name="Discipline" Relationship="Self.FK__Disciplin__Ciphe__4AB81AF0" FromRole="Cafedra" ToRole="Discipline" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__Cipher__4BAC3F29" FromRole="Cafedra" ToRole="Employee" />
-          <NavigationProperty Name="Speciality" Relationship="Self.FK__Specialit__Ciphe__5070F446" FromRole="Cafedra" ToRole="Speciality" />
-        </EntityType>
-        <EntityType Name="Countries">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Capital" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Square" Type="Int32" />
-          <Property Name="Population" Type="Int32" />
-          <Property Name="Continent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Countries_Kulikov">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Capital" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Continent" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Population" Type="Int32" />
-          <Property Name="Square" Type="Int32" />
-          <Property Name="TypeOfRuling" Type="Int32" />
-          <NavigationProperty Name="Upravlenie_Kulikov" Relationship="Self.FK__Countries__TypeO__49C3F6B7" FromRole="Countries_Kulikov" ToRole="Upravlenie_Kulikov" />
+          <NavigationProperty Name="Faculty" Relationship="Self.FK__Cafedra__AbbrID__59063A47" FromRole="Cafedra" ToRole="Faculty" />
+          <NavigationProperty Name="Discipline" Relationship="Self.FK__Disciplin__Ciphe__5AEE82B9" FromRole="Cafedra" ToRole="Discipline" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Employee__Cipher__5BE2A6F2" FromRole="Cafedra" ToRole="Employee" />
+          <NavigationProperty Name="Speciality" Relationship="Self.FK__Specialit__Ciphe__60A75C0F" FromRole="Cafedra" ToRole="Speciality" />
         </EntityType>
         <EntityType Name="Discipline">
           <Key>
@@ -502,9 +363,9 @@
           <Property Name="NumberOfHours" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CipherID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Cafedra" Relationship="Self.FK__Disciplin__Ciphe__4AB81AF0" FromRole="Discipline" ToRole="Cafedra" />
-          <NavigationProperty Name="Exam" Relationship="Self.FK__Exam__Discipline__4D94879B" FromRole="Discipline" ToRole="Exam" />
-          <NavigationProperty Name="Zayavka" Relationship="Self.FK__Zayavka__Zayavka__5535A963" FromRole="Discipline" ToRole="Zayavka" />
+          <NavigationProperty Name="Cafedra" Relationship="Self.FK__Disciplin__Ciphe__5AEE82B9" FromRole="Discipline" ToRole="Cafedra" />
+          <NavigationProperty Name="Exam" Relationship="Self.FK__Exam__Discipline__5DCAEF64" FromRole="Discipline" ToRole="Exam" />
+          <NavigationProperty Name="Zayavka" Relationship="Self.FK__Zayavka__Zayavka__656C112C" FromRole="Discipline" ToRole="Zayavka" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -516,13 +377,13 @@
           <Property Name="Position" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Chief" Type="Int32" />
-          <NavigationProperty Name="Cafedra" Relationship="Self.FK__Employee__Cipher__4BAC3F29" FromRole="Employee" ToRole="Cafedra" />
-          <NavigationProperty Name="Engineer" Relationship="Self.FK__Engineer__EngID__4CA06362" FromRole="Employee" ToRole="Engineer" />
-          <NavigationProperty Name="Exam" Relationship="Self.FK__Exam__EmployeeID__4E88ABD4" FromRole="Employee" ToRole="Exam" />
-          <NavigationProperty Name="Teacher" Relationship="Self.FK__Teacher__Teacher__52593CB8" FromRole="Employee" ToRole="Teacher" />
-          <NavigationProperty Name="ZavCafedra" Relationship="Self.FK__ZavCafedr__ZavID__534D60F1" FromRole="Employee" ToRole="ZavCafedra" />
           <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cafedra" Relationship="Self.FK__Employee__Cipher__5BE2A6F2" FromRole="Employee" ToRole="Cafedra" />
+          <NavigationProperty Name="Engineer" Relationship="Self.FK__Engineer__EngID__5CD6CB2B" FromRole="Employee" ToRole="Engineer" />
+          <NavigationProperty Name="Exam" Relationship="Self.FK__Exam__EmployeeID__5EBF139D" FromRole="Employee" ToRole="Exam" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK__Teacher__Teacher__628FA481" FromRole="Employee" ToRole="Teacher" />
+          <NavigationProperty Name="ZavCafedra" Relationship="Self.FK__ZavCafedr__ZavID__6383C8BA" FromRole="Employee" ToRole="ZavCafedra" />
         </EntityType>
         <EntityType Name="Engineer">
           <Key>
@@ -530,7 +391,7 @@
           </Key>
           <Property Name="EngID" Type="Int32" Nullable="false" />
           <Property Name="SpecialityName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__Engineer__EngID__4CA06362" FromRole="Engineer" ToRole="Employee" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Engineer__EngID__5CD6CB2B" FromRole="Engineer" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Exam">
           <Key>
@@ -543,9 +404,9 @@
           <Property Name="EmployeeID" Type="Int32" />
           <Property Name="Auditorium" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Mark" Type="Int32" />
-          <NavigationProperty Name="Discipline" Relationship="Self.FK__Exam__Discipline__4D94879B" FromRole="Exam" ToRole="Discipline" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__Exam__EmployeeID__4E88ABD4" FromRole="Exam" ToRole="Employee" />
-          <NavigationProperty Name="Student" Relationship="Self.FK__Exam__RegID__4F7CD00D" FromRole="Exam" ToRole="Student" />
+          <NavigationProperty Name="Discipline" Relationship="Self.FK__Exam__Discipline__5DCAEF64" FromRole="Exam" ToRole="Discipline" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Exam__EmployeeID__5EBF139D" FromRole="Exam" ToRole="Employee" />
+          <NavigationProperty Name="Student" Relationship="Self.FK__Exam__RegID__5FB337D6" FromRole="Exam" ToRole="Student" />
         </EntityType>
         <EntityType Name="Faculty">
           <Key>
@@ -553,7 +414,7 @@
           </Key>
           <Property Name="AbbrID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Cafedra" Relationship="Self.FK__Cafedra__AbbrID__48CFD27E" FromRole="Faculty" ToRole="Cafedra" />
+          <NavigationProperty Name="Cafedra" Relationship="Self.FK__Cafedra__AbbrID__59063A47" FromRole="Faculty" ToRole="Cafedra" />
         </EntityType>
         <EntityType Name="Speciality">
           <Key>
@@ -562,9 +423,9 @@
           <Property Name="SpecialityID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="CipherID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Cafedra" Relationship="Self.FK__Specialit__Ciphe__5070F446" FromRole="Speciality" ToRole="Cafedra" />
-          <NavigationProperty Name="Student" Relationship="Self.FK__Student__Special__5165187F" FromRole="Speciality" ToRole="Student" />
-          <NavigationProperty Name="Zayavka" Relationship="Self.FK__Zayavka__Special__5441852A" FromRole="Speciality" ToRole="Zayavka" />
+          <NavigationProperty Name="Cafedra" Relationship="Self.FK__Specialit__Ciphe__60A75C0F" FromRole="Speciality" ToRole="Cafedra" />
+          <NavigationProperty Name="Student" Relationship="Self.FK__Student__Special__619B8048" FromRole="Speciality" ToRole="Student" />
+          <NavigationProperty Name="Zayavka" Relationship="Self.FK__Zayavka__Special__6477ECF3" FromRole="Speciality" ToRole="Zayavka" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -573,18 +434,8 @@
           <Property Name="RegID" Type="Int32" Nullable="false" />
           <Property Name="SpecialityID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Exam" Relationship="Self.FK__Exam__RegID__4F7CD00D" FromRole="Student" ToRole="Exam" />
-          <NavigationProperty Name="Speciality" Relationship="Self.FK__Student__Special__5165187F" FromRole="Student" ToRole="Speciality" />
-        </EntityType>
-        <EntityType Name="Student1">
-          <Key>
-            <PropertyRef Name="IDStudent" />
-          </Key>
-          <Property Name="IDStudent" Type="Int32" Nullable="false" />
-          <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="School" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Ball" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Exam" Relationship="Self.FK__Exam__RegID__5FB337D6" FromRole="Student" ToRole="Exam" />
+          <NavigationProperty Name="Speciality" Relationship="Self.FK__Student__Special__619B8048" FromRole="Student" ToRole="Speciality" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -603,15 +454,7 @@
           <Property Name="TeacherID" Type="Int32" Nullable="false" />
           <Property Name="PositionAward" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Stepen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__Teacher__Teacher__52593CB8" FromRole="Teacher" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Upravlenie_Kulikov">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Vid" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Countries_Kulikov" Relationship="Self.FK__Countries__TypeO__49C3F6B7" FromRole="Upravlenie_Kulikov" ToRole="Countries_Kulikov" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Teacher__Teacher__628FA481" FromRole="Teacher" ToRole="Employee" />
         </EntityType>
         <EntityType Name="ZavCafedra">
           <Key>
@@ -619,17 +462,7 @@
           </Key>
           <Property Name="ZavID" Type="Int32" Nullable="false" />
           <Property Name="WorkingYears" Type="Int32" />
-          <NavigationProperty Name="Employee" Relationship="Self.FK__ZavCafedr__ZavID__534D60F1" FromRole="ZavCafedra" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Ученики">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Предмет" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Школа" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Баллы" Type="Double" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__ZavCafedr__ZavID__6383C8BA" FromRole="ZavCafedra" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Zayavka">
           <Key>
@@ -637,23 +470,10 @@
           </Key>
           <Property Name="ZayavkaID" Type="Int32" Nullable="false" />
           <Property Name="SpecialityID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Discipline" Relationship="Self.FK__Zayavka__Zayavka__5535A963" FromRole="Zayavka" ToRole="Discipline" />
-          <NavigationProperty Name="Speciality" Relationship="Self.FK__Zayavka__Special__5441852A" FromRole="Zayavka" ToRole="Speciality" />
+          <NavigationProperty Name="Discipline" Relationship="Self.FK__Zayavka__Zayavka__656C112C" FromRole="Zayavka" ToRole="Discipline" />
+          <NavigationProperty Name="Speciality" Relationship="Self.FK__Zayavka__Special__6477ECF3" FromRole="Zayavka" ToRole="Speciality" />
         </EntityType>
-        <EntityType Name="Гимназисты">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="Фамилия" />
-            <PropertyRef Name="Предмет" />
-            <PropertyRef Name="Школа" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Предмет" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Школа" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Баллы" Type="Double" />
-        </EntityType>
-        <Association Name="FK__Cafedra__AbbrID__48CFD27E">
+        <Association Name="FK__Cafedra__AbbrID__59063A47">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="*" />
           <ReferentialConstraint>
@@ -665,7 +485,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Disciplin__Ciphe__4AB81AF0">
+        <Association Name="FK__Disciplin__Ciphe__5AEE82B9">
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="0..1" />
           <End Role="Discipline" Type="Self.Discipline" Multiplicity="*" />
           <ReferentialConstraint>
@@ -677,7 +497,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employee__Cipher__4BAC3F29">
+        <Association Name="FK__Employee__Cipher__5BE2A6F2">
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
@@ -689,7 +509,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Specialit__Ciphe__5070F446">
+        <Association Name="FK__Specialit__Ciphe__60A75C0F">
           <End Role="Cafedra" Type="Self.Cafedra" Multiplicity="0..1" />
           <End Role="Speciality" Type="Self.Speciality" Multiplicity="*" />
           <ReferentialConstraint>
@@ -701,19 +521,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Countries__TypeO__49C3F6B7">
-          <End Role="Upravlenie_Kulikov" Type="Self.Upravlenie_Kulikov" Multiplicity="0..1" />
-          <End Role="Countries_Kulikov" Type="Self.Countries_Kulikov" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Upravlenie_Kulikov">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Countries_Kulikov">
-              <PropertyRef Name="TypeOfRuling" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Exam__Discipline__4D94879B">
+        <Association Name="FK__Exam__Discipline__5DCAEF64">
           <End Role="Discipline" Type="Self.Discipline" Multiplicity="0..1" />
           <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -725,7 +533,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Zayavka__Zayavka__5535A963">
+        <Association Name="FK__Zayavka__Zayavka__656C112C">
           <End Role="Discipline" Type="Self.Discipline" Multiplicity="1" />
           <End Role="Zayavka" Type="Self.Zayavka" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -737,7 +545,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Engineer__EngID__4CA06362">
+        <Association Name="FK__Engineer__EngID__5CD6CB2B">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Engineer" Type="Self.Engineer" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -749,7 +557,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Exam__EmployeeID__4E88ABD4">
+        <Association Name="FK__Exam__EmployeeID__5EBF139D">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -761,7 +569,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Teacher__Teacher__52593CB8">
+        <Association Name="FK__Teacher__Teacher__628FA481">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -773,7 +581,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZavCafedr__ZavID__534D60F1">
+        <Association Name="FK__ZavCafedr__ZavID__6383C8BA">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="ZavCafedra" Type="Self.ZavCafedra" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -785,7 +593,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Exam__RegID__4F7CD00D">
+        <Association Name="FK__Exam__RegID__5FB337D6">
           <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
           <End Role="Exam" Type="Self.Exam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -797,7 +605,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Student__Special__5165187F">
+        <Association Name="FK__Student__Special__619B8048">
           <End Role="Speciality" Type="Self.Speciality" Multiplicity="0..1" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
           <ReferentialConstraint>
@@ -809,7 +617,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Zayavka__Special__5441852A">
+        <Association Name="FK__Zayavka__Special__6477ECF3">
           <End Role="Speciality" Type="Self.Speciality" Multiplicity="0..1" />
           <End Role="Zayavka" Type="Self.Zayavka" Multiplicity="*" />
           <ReferentialConstraint>
@@ -822,10 +630,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="UchebnayaPracticeEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Academics" EntityType="Self.Academics" />
           <EntitySet Name="Cafedra" EntityType="Self.Cafedra" />
-          <EntitySet Name="Countries" EntityType="Self.Countries" />
-          <EntitySet Name="Countries_Kulikov" EntityType="Self.Countries_Kulikov" />
           <EntitySet Name="Discipline" EntityType="Self.Discipline" />
           <EntitySet Name="Employee" EntityType="Self.Employee" />
           <EntitySet Name="Engineer" EntityType="Self.Engineer" />
@@ -833,67 +638,59 @@
           <EntitySet Name="Faculty" EntityType="Self.Faculty" />
           <EntitySet Name="Speciality" EntityType="Self.Speciality" />
           <EntitySet Name="Student" EntityType="Self.Student" />
-          <EntitySet Name="Student1" EntityType="Self.Student1" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" />
-          <EntitySet Name="Upravlenie_Kulikov" EntityType="Self.Upravlenie_Kulikov" />
           <EntitySet Name="ZavCafedra" EntityType="Self.ZavCafedra" />
-          <EntitySet Name="Ученики" EntityType="Self.Ученики" />
           <EntitySet Name="Zayavka" EntityType="Self.Zayavka" />
-          <EntitySet Name="Гимназисты" EntityType="Self.Гимназисты" />
-          <AssociationSet Name="FK__Cafedra__AbbrID__48CFD27E" Association="Self.FK__Cafedra__AbbrID__48CFD27E">
+          <AssociationSet Name="FK__Cafedra__AbbrID__59063A47" Association="Self.FK__Cafedra__AbbrID__59063A47">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Cafedra" EntitySet="Cafedra" />
           </AssociationSet>
-          <AssociationSet Name="FK__Disciplin__Ciphe__4AB81AF0" Association="Self.FK__Disciplin__Ciphe__4AB81AF0">
+          <AssociationSet Name="FK__Disciplin__Ciphe__5AEE82B9" Association="Self.FK__Disciplin__Ciphe__5AEE82B9">
             <End Role="Cafedra" EntitySet="Cafedra" />
             <End Role="Discipline" EntitySet="Discipline" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employee__Cipher__4BAC3F29" Association="Self.FK__Employee__Cipher__4BAC3F29">
+          <AssociationSet Name="FK__Employee__Cipher__5BE2A6F2" Association="Self.FK__Employee__Cipher__5BE2A6F2">
             <End Role="Cafedra" EntitySet="Cafedra" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
-          <AssociationSet Name="FK__Specialit__Ciphe__5070F446" Association="Self.FK__Specialit__Ciphe__5070F446">
+          <AssociationSet Name="FK__Specialit__Ciphe__60A75C0F" Association="Self.FK__Specialit__Ciphe__60A75C0F">
             <End Role="Cafedra" EntitySet="Cafedra" />
             <End Role="Speciality" EntitySet="Speciality" />
           </AssociationSet>
-          <AssociationSet Name="FK__Countries__TypeO__49C3F6B7" Association="Self.FK__Countries__TypeO__49C3F6B7">
-            <End Role="Upravlenie_Kulikov" EntitySet="Upravlenie_Kulikov" />
-            <End Role="Countries_Kulikov" EntitySet="Countries_Kulikov" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Exam__Discipline__4D94879B" Association="Self.FK__Exam__Discipline__4D94879B">
+          <AssociationSet Name="FK__Exam__Discipline__5DCAEF64" Association="Self.FK__Exam__Discipline__5DCAEF64">
             <End Role="Discipline" EntitySet="Discipline" />
             <End Role="Exam" EntitySet="Exam" />
           </AssociationSet>
-          <AssociationSet Name="FK__Zayavka__Zayavka__5535A963" Association="Self.FK__Zayavka__Zayavka__5535A963">
+          <AssociationSet Name="FK__Zayavka__Zayavka__656C112C" Association="Self.FK__Zayavka__Zayavka__656C112C">
             <End Role="Discipline" EntitySet="Discipline" />
             <End Role="Zayavka" EntitySet="Zayavka" />
           </AssociationSet>
-          <AssociationSet Name="FK__Engineer__EngID__4CA06362" Association="Self.FK__Engineer__EngID__4CA06362">
+          <AssociationSet Name="FK__Engineer__EngID__5CD6CB2B" Association="Self.FK__Engineer__EngID__5CD6CB2B">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Engineer" EntitySet="Engineer" />
           </AssociationSet>
-          <AssociationSet Name="FK__Exam__EmployeeID__4E88ABD4" Association="Self.FK__Exam__EmployeeID__4E88ABD4">
+          <AssociationSet Name="FK__Exam__EmployeeID__5EBF139D" Association="Self.FK__Exam__EmployeeID__5EBF139D">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Exam" EntitySet="Exam" />
           </AssociationSet>
-          <AssociationSet Name="FK__Teacher__Teacher__52593CB8" Association="Self.FK__Teacher__Teacher__52593CB8">
+          <AssociationSet Name="FK__Teacher__Teacher__628FA481" Association="Self.FK__Teacher__Teacher__628FA481">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Teacher" EntitySet="Teacher" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZavCafedr__ZavID__534D60F1" Association="Self.FK__ZavCafedr__ZavID__534D60F1">
+          <AssociationSet Name="FK__ZavCafedr__ZavID__6383C8BA" Association="Self.FK__ZavCafedr__ZavID__6383C8BA">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="ZavCafedra" EntitySet="ZavCafedra" />
           </AssociationSet>
-          <AssociationSet Name="FK__Exam__RegID__4F7CD00D" Association="Self.FK__Exam__RegID__4F7CD00D">
+          <AssociationSet Name="FK__Exam__RegID__5FB337D6" Association="Self.FK__Exam__RegID__5FB337D6">
             <End Role="Student" EntitySet="Student" />
             <End Role="Exam" EntitySet="Exam" />
           </AssociationSet>
-          <AssociationSet Name="FK__Student__Special__5165187F" Association="Self.FK__Student__Special__5165187F">
+          <AssociationSet Name="FK__Student__Special__619B8048" Association="Self.FK__Student__Special__619B8048">
             <End Role="Speciality" EntitySet="Speciality" />
             <End Role="Student" EntitySet="Student" />
           </AssociationSet>
-          <AssociationSet Name="FK__Zayavka__Special__5441852A" Association="Self.FK__Zayavka__Special__5441852A">
+          <AssociationSet Name="FK__Zayavka__Special__6477ECF3" Association="Self.FK__Zayavka__Special__6477ECF3">
             <End Role="Speciality" EntitySet="Speciality" />
             <End Role="Zayavka" EntitySet="Zayavka" />
           </AssociationSet>
@@ -904,48 +701,12 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище UchebnayaPracticeModelContainer" CdmEntityContainer="UchebnayaPracticeEntities">
-          <EntitySetMapping Name="Academics">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Academics">
-              <MappingFragment StoreEntitySet="Academics">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FIO" ColumnName="FIO" />
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
-                <ScalarProperty Name="YearAward" ColumnName="YearAward" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Cafedra">
             <EntityTypeMapping TypeName="UchebnayaPracticeModel.Cafedra">
               <MappingFragment StoreEntitySet="Cafedra">
                 <ScalarProperty Name="CipherID" ColumnName="CipherID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="AbbrID" ColumnName="AbbrID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Countries">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Countries">
-              <MappingFragment StoreEntitySet="Countries">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Capital" ColumnName="Capital" />
-                <ScalarProperty Name="Square" ColumnName="Square" />
-                <ScalarProperty Name="Population" ColumnName="Population" />
-                <ScalarProperty Name="Continent" ColumnName="Continent" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Countries_Kulikov">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Countries_Kulikov">
-              <MappingFragment StoreEntitySet="Countries_Kulikov">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Capital" ColumnName="Capital" />
-                <ScalarProperty Name="Continent" ColumnName="Continent" />
-                <ScalarProperty Name="Population" ColumnName="Population" />
-                <ScalarProperty Name="Square" ColumnName="Square" />
-                <ScalarProperty Name="TypeOfRuling" ColumnName="TypeOfRuling" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -962,14 +723,14 @@
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="UchebnayaPracticeModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="CipherID" ColumnName="CipherID" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Position" ColumnName="Position" />
                 <ScalarProperty Name="Salary" ColumnName="Salary" />
                 <ScalarProperty Name="Chief" ColumnName="Chief" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1020,17 +781,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Student1">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Student1">
-              <MappingFragment StoreEntitySet="Student1">
-                <ScalarProperty Name="IDStudent" ColumnName="IDStudent" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Subject" ColumnName="Subject" />
-                <ScalarProperty Name="School" ColumnName="School" />
-                <ScalarProperty Name="Ball" ColumnName="Ball" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="UchebnayaPracticeModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -1051,14 +801,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Upravlenie_Kulikov">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Upravlenie_Kulikov">
-              <MappingFragment StoreEntitySet="Upravlenie_Kulikov">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Vid" ColumnName="Vid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ZavCafedra">
             <EntityTypeMapping TypeName="UchebnayaPracticeModel.ZavCafedra">
               <MappingFragment StoreEntitySet="ZavCafedra">
@@ -1067,33 +809,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ученики">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Ученики">
-              <MappingFragment StoreEntitySet="Ученики">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
-                <ScalarProperty Name="Предмет" ColumnName="Предмет" />
-                <ScalarProperty Name="Школа" ColumnName="Школа" />
-                <ScalarProperty Name="Баллы" ColumnName="Баллы" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Zayavka">
             <EntityTypeMapping TypeName="UchebnayaPracticeModel.Zayavka">
               <MappingFragment StoreEntitySet="Zayavka">
                 <ScalarProperty Name="ZayavkaID" ColumnName="ZayavkaID" />
                 <ScalarProperty Name="SpecialityID" ColumnName="SpecialityID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Гимназисты">
-            <EntityTypeMapping TypeName="UchebnayaPracticeModel.Гимназисты">
-              <MappingFragment StoreEntitySet="Гимназисты">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
-                <ScalarProperty Name="Предмет" ColumnName="Предмет" />
-                <ScalarProperty Name="Школа" ColumnName="Школа" />
-                <ScalarProperty Name="Баллы" ColumnName="Баллы" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

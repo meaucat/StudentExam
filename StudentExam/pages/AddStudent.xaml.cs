@@ -13,6 +13,7 @@ namespace StudentExam.pages
     public partial class AddStudent : Page
     {
         Employee nameTeacher = new Employee();
+        Exam examToSend = new Exam();
         public static List<Student> students { get; set; }
 
         public AddStudent(Employee currentUser, Exam exam)
@@ -21,11 +22,12 @@ namespace StudentExam.pages
             students = new List<Student>(Connection.UchebnayaPracticeEntities.Student.ToList());
 
             nameTeacher = currentUser;
+            examToSend = exam;
 
             ExamNameTB.Text = exam.Discipline.Name;
             ExamDateTB.Text = exam.ExamDate.ToString();
 
-
+            studentsExam.ItemsSource = Connection.UchebnayaPracticeEntities.Student.Where(x => x.RegID == exam.RegID).ToList();
 
             DataContext = this;
         }
@@ -37,7 +39,7 @@ namespace StudentExam.pages
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddStudentForExam(nameTeacher, examToSend));
         }
     }
 }

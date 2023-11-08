@@ -39,7 +39,7 @@
 
         <TextBlock x:Name="TeacherNameTB" FontSize="20" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="4"/>
 
-        <TextBlock FontSize="25" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Студенты, которые сдают экзамен</TextBlock>
+        <TextBlock FontSize="25" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Студенты, которые сдали экзамен</TextBlock>
 
         <ListView x:Name="studentsExam" ItemsSource="{Binding students}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4">
