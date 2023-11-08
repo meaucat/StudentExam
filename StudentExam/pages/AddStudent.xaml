@@ -39,21 +39,23 @@
 
         <TextBlock x:Name="TeacherNameTB" FontSize="20" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="4"/>
 
-        <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Экзамены</TextBlock>
+        <TextBlock FontSize="25" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Студенты, которые сдают экзамен</TextBlock>
 
-        <ListView x:Name="DisciplineListView" ItemsSource="{Binding exams}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+        <ListView x:Name="studentsExam" ItemsSource="{Binding students}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=ExamDate}"
-                        Header="Дата экзамена" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Discipline.Name}"
-                        Header="Название дисциплины" Width="290"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=RegID}"
+                        Header="Идентификационный номер" Width="170"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}"
+                        Header="ФИО сдающего" Width="300"/>
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <TextBlock x:Name="ExamNameTB" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"></TextBlock>
-        <TextBlock x:Name="ExamDateTB" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13"></TextBlock>
+        <Button x:Name="AddButton" FontWeight="Bold" Click="AddButton_Click" Grid.Column="8" Grid.Row="9" Grid.ColumnSpan="2">Добавить</Button>
+
+        <TextBlock x:Name="ExamNameTB" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"></TextBlock>
+        <TextBlock x:Name="ExamDateTB" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="13"></TextBlock>
     </Grid>
 </Page>

@@ -1,18 +1,10 @@
-﻿using System;
+﻿using StudentExam.DB;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using StudentExam.DB;
 
 namespace StudentExam.pages
 {
@@ -47,12 +39,12 @@ namespace StudentExam.pages
                     NavigationService.Navigate(new TeacherPage(currentUser));
                 if (currentUser.Position == "инженер")
                     NavigationService.Navigate(new EngineerPage(currentUser));
-                
+
             }
             else
                 LoginBtn.Background = Brushes.Red;
-                CheckLoginTextBlock.Foreground = Brushes.Red;
-                CheckLoginTextBlock.Text = "Что-то введено неверно, попробуйте еще раз";
+            CheckLoginTextBlock.Foreground = Brushes.Red;
+            CheckLoginTextBlock.Text = "Что-то введено неверно, попробуйте еще раз";
         }
     }
 }

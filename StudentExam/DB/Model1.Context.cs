@@ -25,7 +25,10 @@ namespace StudentExam.DB
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Academics> Academics { get; set; }
         public virtual DbSet<Cafedra> Cafedra { get; set; }
+        public virtual DbSet<Countries> Countries { get; set; }
+        public virtual DbSet<Countries_Kulikov> Countries_Kulikov { get; set; }
         public virtual DbSet<Discipline> Discipline { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Engineer> Engineer { get; set; }
@@ -33,9 +36,13 @@ namespace StudentExam.DB
         public virtual DbSet<Faculty> Faculty { get; set; }
         public virtual DbSet<Speciality> Speciality { get; set; }
         public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<Student1> Student1 { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Teacher> Teacher { get; set; }
+        public virtual DbSet<Upravlenie_Kulikov> Upravlenie_Kulikov { get; set; }
         public virtual DbSet<ZavCafedra> ZavCafedra { get; set; }
+        public virtual DbSet<Ученики> Ученики { get; set; }
         public virtual DbSet<Zayavka> Zayavka { get; set; }
+        public virtual DbSet<Гимназисты> Гимназисты { get; set; }
     }
 }

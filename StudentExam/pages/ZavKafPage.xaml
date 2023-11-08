@@ -9,6 +9,48 @@
       Title="ZavKafPage">
 
     <Grid>
-        <TextBlock>ЗАВ КАФ</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Background="#ff6161" FontWeight="Bold" Click="Button_Click">← Back</Button>
+
+        <TextBlock x:Name="ZavCafNameTB" FontSize="20" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="4">Зав. кафедрой:</TextBlock>
+
+        <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Кафедра</TextBlock>
+
+        <ListView x:Name="DisciplineListView" ItemsSource="{Binding departaments}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"
+                        Header="Название кафедры" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Faculty.Name}"
+                        Header="Направление" Width="290"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>

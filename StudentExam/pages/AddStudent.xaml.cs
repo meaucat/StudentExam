@@ -1,18 +1,9 @@
-﻿using System;
+﻿using StudentExam.DB;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using StudentExam.DB;
 
 namespace StudentExam.pages
 {
@@ -22,12 +13,20 @@ namespace StudentExam.pages
     public partial class AddStudent : Page
     {
         Employee nameTeacher = new Employee();
+        public static List<Student> students { get; set; }
+
         public AddStudent(Employee currentUser, Exam exam)
         {
             InitializeComponent();
+            students = new List<Student>(Connection.UchebnayaPracticeEntities.Student.ToList());
+
             nameTeacher = currentUser;
+
             ExamNameTB.Text = exam.Discipline.Name;
-            ExamDateTB.Text = exam.ExamDate; 
+            ExamDateTB.Text = exam.ExamDate.ToString();
+
+
+
             DataContext = this;
         }
 
@@ -36,6 +35,9 @@ namespace StudentExam.pages
             NavigationService.Navigate(new TeacherPage(nameTeacher));
         }
 
-        
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

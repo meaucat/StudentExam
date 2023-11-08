@@ -9,6 +9,48 @@
       Title="EngineerPage">
 
     <Grid>
-        <TextBlock>ИНЖЕНЕР</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Background="#ff6161" FontWeight="Bold" Click="Button_Click">← Back</Button>
+
+        <TextBlock x:Name="EngineerNameTB" FontSize="20" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="4">Инженер: </TextBlock>
+
+        <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Сотрудники</TextBlock>
+
+        <ListView x:Name="DisciplineListView" ItemsSource="{Binding employees}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}"
+                        Header="Название кафедры" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path = Position}"
+                        Header="Направление" Width="290"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>
