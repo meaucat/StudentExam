@@ -52,5 +52,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <Button Grid.Row="9" Grid.Column="9" Click="AddCafPage_Click">+</Button>
     </Grid>
 </Page>

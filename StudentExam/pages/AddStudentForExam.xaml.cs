@@ -1,18 +1,9 @@
-﻿using System;
+﻿using StudentExam.DB;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using StudentExam.DB;
 
 namespace StudentExam.pages
 {
@@ -45,13 +36,10 @@ namespace StudentExam.pages
         {
             string regIdStudent = IDStudentTextBox.Text.Trim();
             string markStudent = MarkTextBox.Text.Trim();
-
-            examList = new List<Exam>(Connection.UchebnayaPracticeEntities.Exam.ToList());
             try
             {
                 if (regIdStudent != null && markStudent != null && int.Parse(markStudent) <= 5)
                 {
-
                     emptyExam.ExamID = examToSend.ExamID;
                     emptyExam.ExamDate = examToSend.ExamDate;
                     emptyExam.DisciplineID = examToSend.DisciplineID;

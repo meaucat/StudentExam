@@ -31,6 +31,9 @@ namespace StudentExam.pages
             NavigationService.Navigate(new AuthorizationPage());
         }
 
-
+        private void AddCafPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddCafPage(nameZavCaf));
+        }
     }
 }

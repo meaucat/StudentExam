@@ -10,7 +10,7 @@ namespace StudentExam.pages
     /// </summary>
     public partial class EngineerPage : Page
     {
-        public static List<Employee> employees {get; set;}
+        public static List<Employee> employees { get; set; }
         Employee nameEngineer = new Employee();
 
         public EngineerPage(Employee currentUser)
