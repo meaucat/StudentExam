@@ -147,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="pages\EditDeleteDisciplinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\EngineerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +180,9 @@
     </Compile>
     <Compile Include="pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\EditDeleteDisciplinePage.xaml.cs">
+      <DependentUpon>EditDeleteDisciplinePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\EngineerPage.xaml.cs">
       <DependentUpon>EngineerPage.xaml</DependentUpon>

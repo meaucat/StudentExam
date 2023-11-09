@@ -37,16 +37,22 @@
 
         <Button Background="#ff6161" FontWeight="Bold" Click="Button_Click" HorizontalAlignment="Left" Width="80">← Back</Button>
 
-        <TextBlock Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">Добавление новой кафедры</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">Добавление новой кафедры</TextBlock>
 
-        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Аббревиатура кафедры:</TextBlock>
-        <TextBox x:Name="AbbTextBox" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="5" Height="30"></TextBox>
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Аббревиатура кафедры:</TextBlock>
+        <TextBox x:Name="AbbTextBox" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="5" Height="30"></TextBox>
 
-        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Название кафедры:</TextBlock>
-        <TextBox x:Name="NameCafTextBox" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="5" Height="30"></TextBox>
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Название кафедры:</TextBlock>
+        <TextBox x:Name="NameCafTextBox" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="5" Height="30"></TextBox>
 
-        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Факультет:</TextBlock>
-        <ComboBox x:Name="FacultyComboBox" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="5" Height="30" SelectionChanged="FacultyComboBox_SelectionChanged"></ComboBox>
+        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">Факультет:</TextBlock>
+        <ComboBox x:Name="FacultyComboBox" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="5" Height="30" ItemsSource="{Binding faculty}" SelectionChanged="FacultyComboBox_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
         <Button x:Name="AddCafButton" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Height="35" Click="AddCafButton_Click">Добавить кафедру</Button>
     </Grid>

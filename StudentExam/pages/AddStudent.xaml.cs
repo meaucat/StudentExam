@@ -25,7 +25,7 @@ namespace StudentExam.pages
             examToSend = exam;
 
             ExamNameTB.Text = exam.Discipline.Name;
-            ExamDateTB.Text = exam.ExamDate.ToString();
+            ExamDateTB.Text = exam.ExamDate.ToString().Split(' ')[0];
 
             studentsExam.ItemsSource = Connection.UchebnayaPracticeEntities.Student.Where(x => x.RegID == exam.RegID).ToList();
 

@@ -1,4 +1,4 @@
-﻿<Page x:Class="StudentExam.pages.ZavKafPage"
+﻿<Page x:Class="StudentExam.pages.EditDeleteDisciplinePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:StudentExam.pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ZavKafPage">
+      Title="EditDeleteDisciplinePage">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -39,20 +39,21 @@
 
         <TextBlock x:Name="ZavCafNameTB" FontSize="20" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="4">Зав. кафедрой:</TextBlock>
 
-        <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Кафедра</TextBlock>
+        <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Дисциплины</TextBlock>
 
-        <ListView x:Name="DisciplineListView" ItemsSource="{Binding departaments}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4" SelectionChanged="DisciplineListView_SelectionChanged">
+        <ListView x:Name="DisciplineListView" ItemsSource="{Binding specialities}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+          Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"
-                        Header="Название кафедры" Width="200"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Faculty.Name}"
-                        Header="Направление" Width="290"/>
+                Header="Название" Width="250"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=SpecialityID}"
+                Header="Номер дисциплины" Width="220"/>
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <Button Grid.Row="9" Grid.Column="9" Click="AddCafPage_Click">+</Button>
+        <Button x:Name="editDeleteButtonDiscipline" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2">Редактировать/удалить</Button>
+        <Button x:Name="addButtonDiscipline" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="2">Добавить дисциплину</Button>
     </Grid>
 </Page>

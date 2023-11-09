@@ -14,14 +14,14 @@ namespace StudentExam.pages
     public partial class AddCafPage : Page
     {
         public static List<Cafedra> cafedras { get; set; }
+        public static List<Faculty> faculty { get; set; }
         Employee nameZavCaf = new Employee();
         Cafedra cafedra = new Cafedra();
         public AddCafPage(Employee currentUser)
         {
             InitializeComponent();
             nameZavCaf = currentUser;
-            FacultyComboBox.ItemsSource = Connection.UchebnayaPracticeEntities.Cafedra.ToList();
-
+            faculty = Connection.UchebnayaPracticeEntities.Faculty.ToList();
             DataContext = this;
         }
 
@@ -61,8 +61,9 @@ namespace StudentExam.pages
 
         private void FacultyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
+
     }
 }
 

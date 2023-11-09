@@ -23,7 +23,7 @@ namespace StudentExam.pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Pages/AuthorizationPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new AuthorizationPage());
         }
     }
 }

@@ -24,7 +24,7 @@ namespace StudentExam.pages
             nameTeacher = currentUser;
             examToSend = exam;
 
-            InfoTextBox.Text = $"Информация об экзамене: {exam.Discipline.Name}, дата: {exam.ExamDate.ToString()}";
+            InfoTextBox.Text = $"Информация об экзамене: {exam.Discipline.Name}, дата: {exam.ExamDate.ToString().Split(' ')[0]}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

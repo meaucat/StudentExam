@@ -35,5 +35,10 @@ namespace StudentExam.pages
         {
             NavigationService.Navigate(new AddCafPage(nameZavCaf));
         }
+
+        private void DisciplineListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            NavigationService.Navigate(new EditDeleteDisciplinePage(nameZavCaf));
+        }
     }
 }
