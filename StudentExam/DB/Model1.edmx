@@ -318,7 +318,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Zayavka__Special__5441852A">
-          <End Role="Speciality" Type="Self.Speciality" Multiplicity="0..1" />
+          <End Role="Speciality" Type="Self.Speciality" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Zayavka" Type="Self.Zayavka" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Speciality">
