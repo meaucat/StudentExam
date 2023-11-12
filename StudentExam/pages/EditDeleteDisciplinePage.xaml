@@ -42,7 +42,7 @@
         <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Дисциплины</TextBlock>
 
         <ListView x:Name="DisciplineListView" ItemsSource="{Binding specialities}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-          Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4">
+          Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4" SelectionChanged="DisciplineListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"
@@ -53,7 +53,6 @@
             </ListView.View>
         </ListView>
 
-        <Button x:Name="editDeleteButtonDiscipline" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2">Редактировать/удалить</Button>
-        <Button x:Name="addButtonDiscipline" Grid.Column="6" Grid.Row="8" Grid.ColumnSpan="2">Добавить дисциплину</Button>
+        <Button x:Name="addButtonDiscipline" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="2" Click="addButtonDiscipline_Click">Добавить дисциплину</Button>
     </Grid>
 </Page>

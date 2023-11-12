@@ -42,15 +42,17 @@
         <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6">Сотрудники</TextBlock>
 
         <ListView x:Name="DisciplineListView" ItemsSource="{Binding employees}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4">
+                  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Grid.RowSpan="4" SelectionChanged="DisciplineListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}"
-                        Header="Название кафедры" Width="200"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path = Position}"
-                        Header="Направление" Width="290"/>
+                        Header="ФИО" Width="210"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path = Salary}"
+                        Header="Зарплата" Width="270"/>
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <Button x:Name="AddButtonEmployee" Grid.Column="9" Grid.Row="9" Click="AddButtonEmployee_Click">Добавить</Button>
     </Grid>
 </Page>

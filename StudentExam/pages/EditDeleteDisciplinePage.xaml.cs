@@ -1,18 +1,9 @@
 ﻿using StudentExam.DB;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace StudentExam.pages
 {
@@ -38,6 +29,16 @@ namespace StudentExam.pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ZavKafPage(nameZavCaf));
+        }
+
+        private void addButtonDiscipline_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddDisciplinePage(nameZavCaf));
+        }
+
+        private void DisciplineListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            NavigationService.Navigate(new EditDisciplinePage(DisciplineListView.SelectedItem as Speciality, nameZavCaf));
         }
     }
 }
